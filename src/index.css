@@ -1,69 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,100;1,200;1,300;1,400;1,600&display=swap");
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --common-font: "Josefin Sans", sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
-  margin: 0;
+  background-color: whitesmoke;
+}
+
+/* NavComponent CSS Start Here------------------------------------------------------------------------------------------- */
+
+.navSection {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: whitesmoke;
+  font-size: 18px;
+  font-family: var(--common-font);
+  font-weight: 600;
+  font-style: italic;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.logoNav {
+  display: flex;
+  gap: 20px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.logoNav > img {
+  margin: 5px 0px 5px 0px;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLinks > li {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* NavComponent CSS ends here--------------------------------------------------------------------------------------------- */
+
+/* SearchComponent CSS starts here-------------------------------------------------------------------------------------- */
+
+.searchBar {
+  display: flex;
+  gap: 15px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  max-width: 22.5em;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.input-group__label {
+  position: absolute;
+  left: 3em;
+  top: -0.28em;
+  padding: 0 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: whitesmoke;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.input-group__input {
+  color: #fff;
+  font-size: 1rem;
+  font-style: italic;
+  font-family: var(--common-font);
+  line-height: 1;
+  border-style: none;
+  outline: none;
+  height: 3rem;
+  width: 400px;
+  padding: 0.8em 1em;
+  border: 0.25em solid transparent;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 1.8em;
+  background-size: 200% 100%;
+  transition: background-position 0.8s ease-out;
+}
+
+.input-group__input:hover {
+  background-position: 100% 0;
+}
+
+.input-group__input:focus {
+  outline: 2px dashed #ad2b89;
+  outline-offset: 0.5em;
+}
+
+/* SearchComponent CSS Ends here-------------------------------------------------------------------------------------- */
+
+.forwardSlash {
+  text-align: center;
+  line-height: 50px;
+  font-size: 2rem;
+}
+
+/* SignUp button CSS Starts here-------------------------------------------------------------------------------------- */
+
+.signUpBtn {
+  width: 100px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #000000;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: var(--common-font);
+  font-weight: 600;
+}
+
+.signUpBtn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #00ffd5,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.signUpBtn:active {
+  color: #000;
+}
+
+.signUpBtn:active:after {
+  background: transparent;
+}
+
+.signUpBtn:hover:before {
+  opacity: 1;
+}
+
+.signUpBtn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #1a1919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
   }
-  a:hover {
-    color: #747bff;
+  50% {
+    background-position: 400% 0;
   }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    background-position: 0 0;
   }
+}
+
+/* SignUp button CSS ends here-------------------------------------------------------------------------------------- */
+
+/* HeroSection CSS starts here-------------------------------------------------------------------------------------- */
+
+.heroSection {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background-image: url(./assets/heroWallpaper.png);
+  background-position: center;
+  background-size: cover;
+  font-family: var(--common-font);
+  font-weight: 600;
+  text-transform: capitalize;
+  font-style: italic;
+  color: whitesmoke;
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.425); /* Adjust the opacity as needed */
+  z-index: 1;
+}
+
+.heroSection::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.heroSection > * {
+  position: relative;
+  z-index: 2;
+}
+
+.heroSection h2 {
+  font-size: 50px;
+}
+
+.heroSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1600px;
+}
+
+/* colors
+input-background: rgba(57, 63, 84, 0.8);
+input-text-inactive: #7881A1;
+input-text-active: #BFD2FF; */
+
+/* gradient animation */
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 30rem;
+  padding: .5rem;
+  background: rgba(79, 57, 84, 0.678);
+}
+
+.webflow-style-input::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background: linear-gradient(
+    to right,
+    #b294ff,
+    #57e6e6,
+    #feffb8,
+    #57e6e6,
+    #b294ff,
+    #57e6e6
+  );
+  background-size: 500% auto;
+  animation: gradient 3s linear infinite;
+}
+
+.heroInput {
+  flex-grow: 1;
+  color: #bfd2ff;
+  font-size: 1rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  background: rgba(79, 57, 84, 0);
+  font-style: italic;
+  border: none;
+  outline: none;
+}
+
+.heroInput::placeholder{
+  color: rgba(245, 245, 245, 0.39);
+}
+
+.rightArrow {
+  color: #7a00ff;
+  font-size: 2rem;
+  line-height: 1rem;
+  vertical-align: middle;
+  transition: color 0.25s;
+  border-radius: 20px;
+  background-position: 0% 0%;
+  background: linear-gradient(
+    to right,
+    #b294ffbd,
+    #57e6e6c4,
+    #b294ffbd,
+    #ff64ddc4,
+    #57e6e6c0
+  );
+  background-size: 500% auto;
+  animation: gradient 3s linear infinite;
+}
+
+.webflow-style-input button:hover {
+  color: #bfd2ff;
 }
