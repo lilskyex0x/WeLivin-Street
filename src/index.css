@@ -16,6 +16,13 @@ body {
   background: linear-gradient(0.25turn, #24091d, #740753, #0d4e69, #002c3f);
 }
 
+.underLine {
+  text-align: center;
+  font-size: 1px;
+  background-color: gray;
+  margin: 0 20rem 0 20rem;
+}
+
 /* NavComponent CSS Start Here------------------------------------------------------------------------------------------- */
 
 .navSection {
@@ -364,7 +371,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0 30px;
+  padding: 70px 0 70px;
   color: whitesmoke;
   text-shadow: 1px 1px 2px rgb(3, 0, 0), 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
   font-family: var(--common-font);
@@ -462,7 +469,7 @@ body {
 }
 
 .form-select-element{
-  padding: 10px 30px 10px 30px;
+  padding: 10px 52px 10px 6px;
   background-color: #000;
   font-style: var(--common-font);
   color: #00ffd5;
@@ -471,7 +478,6 @@ body {
     linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  border-radius: 1.8em;
   background-size: 200% 100%;
   transition: background-position 0.8s ease-out;
 }
@@ -486,12 +492,17 @@ body {
 }
 
 .second__block > input {
-  background-color: #000;
   color: #00ffd5;
   font-style: var(--common-font);
   padding: 10px;
   font-size: 15px;
-  border-color: #fff;
+  border: 0.25em solid transparent;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 200% 100%;
+  transition: background-position 0.8s ease-out;
 }
 
 .first__block > label {
@@ -506,10 +517,118 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-
-
-
 /* Buy section CSS Ends here-------------------------------------------------------------------------------------- */
+
+/* CarCard section CSS starts here------------------------------------------------------------------ */
+
+.carCard {
+  display: grid;
+  grid-template-columns: 35em 35em 35em;
+  justify-content: center;
+}
+
+.carCardTitle {
+  display: block;
+  line-height: 8rem;
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px rgb(3, 0, 0), 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
+  font-family: var(--common-font);
+  font-style: italic;
+}
+
+.carCardSection {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 5rem 0;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px rgb(3, 0, 0), 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
+  font-family: var(--common-font);
+  font-style: italic;
+}
+
+.carWrapper {
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.274);
+  color: aliceblue;
+  margin: 1rem;
+  padding: 1rem;
+  flex: 1 0 25rem;
+  max-width: 30rem;
+  max-height: 50rem;
+  transition: 0.2s;
+  /* border: 2px solid #0ff; */
+}
+
+.carWrapper:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: .5rem 0.75rem 1.5rem #26062b;
+}
+
+.cardImage {
+  margin-top: 3rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.carCards__cart {
+  position: absolute;
+  right: 0;
+  margin: 0 1rem 1rem 1rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #00ffd5;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.carCards__wishlist {
+  position: absolute;
+  right: 3rem;
+  margin: 0 1rem 1rem 1rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #00ffd5;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.carCards__fastSelling {
+  position: absolute;
+  left: 0;
+  margin: 0 1rem 1rem 1rem;
+  fill: #fc5c2b;
+  font-size: 2rem;
+}
+
+.carCards__content {
+  margin: 2rem;
+}
+
+.carName {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.displayStack__1,
+.displayStack__2 {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carPrice{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.carSales,
+.carTime {
+  font-size: 1.1rem;
+}
+
+/* CarCard section CSS ends here------------------------------------------------------------------ */
 
 /* FeatureSection CSS starts here-------------------------------------------------------------------------------------- */
 
@@ -520,7 +639,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(./assets/72cc87fc7c3ce61d815f2be01eb64c26.png);
+  background-image: url(./assets/cyberpunk-mclaren-supercars-neon-art-3840x2160-1003.png);
   background-position: center;
   background-size: cover;
 }
@@ -532,7 +651,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity and color as needed */
+  background-color: rgba(0, 0, 0, 0.527); /* Adjust the opacity and color as needed */
   z-index: 1;
 }
 

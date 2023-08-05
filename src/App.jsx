@@ -2,29 +2,18 @@ import { NavBar } from "./components/Navbar"
 import { Hero } from "./components/Hero"
 import { Feature } from "./components/Feature/feature"
 import { Buy } from "./components/Buy"
-import { CarCard } from "./components/carCard/index"
+import { CarCards } from "./components/carCard"
 import carData from "./components/carCard/carData"
 
 const App = () => {
-  return (
+    console.log(carData)
+    return (
     <>
       <NavBar />
       <Hero />
       <Buy />
-      <div className="carCard">
-        {carData.map(car => (
-          <CarCard
-            key={car.id}
-            image={car.image}
-            id={car.id} // Add all the required props here
-            name={car.name}
-            price={car.price}
-            totalSale={car.totalSale}
-            rating={car.rating}
-            timeLeft={car.timeLeft}
-          />
-        ))}
-      </div>
+      <div className="underLine">_</div>
+      <CarCards />
       <Feature />
       <h1>Welcome to JDM Bitch!</h1>
     </>
