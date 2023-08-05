@@ -5,7 +5,7 @@ const carData = [
         image: "https://images.hdqwalls.com/wallpapers/nissan-skyline-gt-r-r34-need-for-speed-4k-xy.jpg",
         carType: "Tuner",
         price: 50000,
-        rating: 5,
+        rating: 4,
         timeLeft: 27,
         totalSale: 1523
     },
@@ -15,14 +15,14 @@ const carData = [
         image: "https://wallpaper.dog/large/20588460.jpg",
         carType: "Exortic",
         price: 244000,
-        rating: 5,
+        rating: 2.5,
         timeLeft: 52,
         totalSale: 865
     },
     {
         id: 3,
         name: "Mazda RX7",
-        image: "https://wallpapersmug.com/large/5726f1/mazda-rx7-rear-view.jpg",
+        image: "https://wallpaper.dog/large/20549115.jpg",
         carType: "Limited",
         price: 840000,
         rating: 5,
