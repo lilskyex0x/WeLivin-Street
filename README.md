@@ -36,7 +36,7 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Client</summary>
+  <summary>Front-end Web Development</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
