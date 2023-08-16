@@ -1,13 +1,13 @@
 import { NavBar } from "./components/Navbar"
 import { Hero } from "./components/Hero"
-import { Feature } from "./components/Feature/feature"
+import { Feature } from "./components/featureTools/featureIndex"
 import { Buy } from "./components/Buy"
 import { CarCards } from "./components/carCard"
 import carData from "./components/carCard/carData"
 
 const App = () => {
-    console.log(carData)
-    return (
+  console.log(carData)
+  return (
     <>
       <NavBar />
       <Hero />
