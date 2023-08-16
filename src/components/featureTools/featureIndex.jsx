@@ -7,8 +7,10 @@ export class Feature extends Component {
     render() {
         return (
             <section className="featureSection">
-                <h2>Featured tools</h2>
-                <CardContainer />
+                <div className="feature__wrapper">
+                    <h2>Featured tools</h2>
+                    <CardContainer />
+                </div>
             </section>
         );
     }
