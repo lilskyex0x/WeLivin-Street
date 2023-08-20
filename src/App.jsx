@@ -1,23 +1,38 @@
-import { NavBar } from "./components/Navbar"
-import { Hero } from "./components/Hero"
-import { Feature } from "./components/featureTools/featureIndex"
-import { Buy } from "./components/Buy"
-import { CarCards } from "./components/carCard"
-import carData from "./components/carCard/carData"
+import { NavBar } from "./components/Navbar";
+import Home from "./components/pages/Home";
+import New from "./components/pages/New";
+import Research from "./components/pages/research";
+import Sell from "./components/pages/Sell";
+import Used from "./components/pages/used";
 
 const App = () => {
-  console.log(carData)
+  let dynamicComponent;
+  switch (window.location.pathname) {
+    case "/":
+      dynamicComponent = <Home />;
+      break;
+    case "/new":
+      dynamicComponent = <New />;
+      break;
+    case "/research":
+      dynamicComponent = <Research />;
+      break;
+    case "/used":
+      dynamicComponent = <Used />;
+      break;
+    case "/sell":
+      dynamicComponent = <Sell />;
+      break;
+    default:
+      dynamicComponent = null;
+  }
+
   return (
     <>
       <NavBar />
-      <Hero />
-      <Buy />
-      <div className="underLine">_</div>
-      <CarCards />
-      <Feature />
-      <h1>Welcome to JDM Bitch!</h1>
+      {dynamicComponent}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

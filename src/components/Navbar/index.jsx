@@ -4,6 +4,7 @@ import { Search } from "./search";
 import '../../index.css'
 
 export class NavBar extends Component {
+
   render() {
     return (
       <header className="navSection">
