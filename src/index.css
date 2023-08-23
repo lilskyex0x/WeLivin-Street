@@ -142,6 +142,39 @@ body {
   outline-offset: 0.5em;
 }
 
+.searchResults{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-top: none;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  border: 1px solid #ad2b89;
+  border-radius: 20px;
+  background-image: linear-gradient(#000000, #00000075),
+    linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+  background-origin: border-box;
+  background-size: 200% 100%;
+}
+
+.searchResults.visible {
+  opacity: 1; 
+  pointer-events: auto; 
+}
+
+.userResult {
+  font-size: 1rem;
+  font-style: italic;
+  font-family: var(--common-font);
+  line-height: 2;
+  border-bottom: 1px solid #01b6d6;
+}
+
 /* SearchComponent CSS Ends here-------------------------------------------------------------------------------------- */
 
 .forwardSlash {
@@ -250,6 +283,7 @@ body {
   text-transform: capitalize;
   font-style: italic;
   color: whitesmoke;
+  z-index: 1;
 }
 
 .heroSection::before {
