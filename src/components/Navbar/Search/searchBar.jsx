@@ -4,11 +4,12 @@ import { SignUpBtn } from "../signUpBtn";
 
 export class Search extends Component {
   constructor(props) {
-    super(props),
-      (this.state = {
-        users: [],
-        searchQuery: "",
-      });
+    super(props);
+    this.state = {
+      users: [],
+      searchQuery: "",
+      isSearchFocused: false,
+    };
   }
 
   componentDidMount() {
@@ -16,24 +17,23 @@ export class Search extends Component {
       .then((result) => result.json())
       .then((data) => this.setState({ users: data }))
       .catch((err) => console.log(err));
-    document.addEventListener("click", this.handleDocumentClick);
+    document.body.addEventListener("click", this.handleDocumentClick);
   }
 
-  componentWillUnmount(){
-    document.removeEventListener("click", this.handleDocumentClick)
+  componentWillUnmount() {
+    document.body.removeEventListener("click", this.handleDocumentClick);
   }
 
   handleDocumentClick = (e) => {
     const isClickedInsideSearch = e.target.closest(".input-group__input");
-    if(!isClickedInsideSearch) {
-      this.setState({searchQuery : ""})
+
+    if (!isClickedInsideSearch) {
+      this.setState({ isSearchFocused: false });
     }
-  }
+  };
 
   render() {
-    const { users, searchQuery } = this.state;
-    const isSearchFocused = searchQuery !== "";
-
+    const { users, searchQuery, isSearchFocused } = this.state;
     const filteredUsers = users.filter((user) =>
       user.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -48,14 +48,32 @@ export class Search extends Component {
             type="text"
             id="myInput"
             className="input-group__input"
-            placeholder="Find somthing you need"
+            placeholder="Find something you need"
+            onChange={(e) =>
+              this.setState({
+                searchQuery: e.target.value,
+                isSearchFocused: true,
+              })
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              this.setState({ isSearchFocused: true });
+            }}
             value={searchQuery}
-            onChange={(e) => this.setState({ searchQuery: e.target.value })}
-            onClick={(e) => e.stopPropagation()}
           />
           <div className={`searchResults ${isSearchFocused ? "visible" : ""}`}>
             {filteredUsers.map((user) => (
-              <div key={user.id} className="userResult">
+              <div
+                key={user.id}
+                className="userResult"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  this.setState({
+                    searchQuery: user.name,
+                    isSearchFocused: false,
+                  });
+                }}
+              >
                 {user.name}
               </div>
             ))}
