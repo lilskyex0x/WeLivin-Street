@@ -173,6 +173,11 @@ body {
   font-family: var(--common-font);
   line-height: 2;
   border-bottom: 1px solid #01b6d6;
+  cursor: pointer;
+}
+
+.userResult:hover {
+  color: #0ff;
 }
 
 /* SearchComponent CSS Ends here-------------------------------------------------------------------------------------- */
